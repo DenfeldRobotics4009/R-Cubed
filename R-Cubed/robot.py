@@ -4,7 +4,7 @@ import wpilib
 
 class RCubed(wpilib.IterativeRobot):
 
-	def robotInit(self):
+    def robotInit(self):
         """This initialises the robot."""
         
         self.robot_drive = wpilib.RobotDrive(0,1)
@@ -23,9 +23,6 @@ class RCubed(wpilib.IterativeRobot):
     def teleopPeriodic(self):
         self.robot_drive.arcadeDrive(self.stick)
         print({"Analog Hall": self.analog_hall.get(), "Digital Hall": self.hall.get()})
-        
-    def testPeriodic(self):
-        pass
     
 if __name == "__main__":
     wpilib.run(RCubed)
