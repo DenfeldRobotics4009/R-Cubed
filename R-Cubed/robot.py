@@ -20,9 +20,9 @@ class RCubed(wpilib.IterativeRobot):
         """This gets called periodically during auton."""
         pass
     
-    def teleopPeriodic(self):
+    def disabledPeriodic(self):
         self.robot_drive.arcadeDrive(self.stick)
         print({"Analog Hall": self.analog_hall.get(), "Digital Hall": self.hall.get()})
     
-if __name == "__main__":
+if __name__ == "__main__":
     wpilib.run(RCubed)
