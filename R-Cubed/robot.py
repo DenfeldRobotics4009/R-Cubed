@@ -24,8 +24,11 @@ class RCubed(wpilib.IterativeRobot):
     def teleopPeriodic(self):
         """This gets called periodically during teleop."""
         self.robot_drive.arcadeDrive(self.stick)
-        self.spike.set(
-    
+        if self.stick.getTrigger():
+            self.spike.set(self.spike.Value.kForward)
+        else:
+            self.spike.set(self.spike.Value.kOff)
+            
     def disabledPeriodic(self):
         self.robot_drive.arcadeDrive(self.stick)
         print({"Analog Hall": self.analog_hall.get(), "Digital Hall": self.hall.get()})
