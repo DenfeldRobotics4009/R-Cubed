@@ -11,6 +11,7 @@ class RCubed(wpilib.IterativeRobot):
         self.stick = wpilib.Joystick(0)
         self.hall = wpilib.DigitalInput(0)
         self.analog_hall = wpilib.AnalogInput(0)
+        self.spike = wpilib.Relay(1)
         
     def autonomousInit(self):
         """This gets run once when the robot enters auton."""
